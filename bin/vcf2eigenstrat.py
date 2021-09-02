@@ -19,21 +19,21 @@ def parse_options():
 	
     try:
         opts, args = getopt.getopt(sys.argv[1:], "v:o:r:i:", ["vcf", "out", "ref", "indmap", "indAsPop"])
-        print opts, args
+        print(opts, args)
     except Exception as err:
-        print str(err)
+        print(str(err))
         sys.exit()
 
     for o, a in opts:
-        print o,a
+        print(o,a)
         if o in ["-v","--vcf"]:         options["vcf"] = a
         if o in ["-r","--ref"]:         options["ref"] = a
         if o in ["-i","--ind"]:         options["indmap"] = a
         if o in ["--indAsPop"]:         options["indAsPop"] = True
         elif o in ["-o","--out"]:       options["out"] = a
 
-    print "found options:"
-    print options
+    print("found options:")
+    print(options)
     return options
 
 ################################################################################
@@ -96,10 +96,10 @@ def main(options):
 
     [f.close for f in [ind, snp, geno]]
 
-    print "Done. Wrote "+str(count) + " sites"
-    print "Excluded " + str(sum(removed.values())) + " sites"
+    print("Done. Wrote "+str(count) + " sites")
+    print("Excluded " + str(sum(removed.values())) + " sites")
     for key in removed:
-        print "Excluded " + str(removed[key]) + " " + key
+        print("Excluded " + str(removed[key]) + " " + key)
     return
 
 ################################################################################
@@ -135,3 +135,4 @@ def decode_gt_string(gt_string):
 if __name__=="__main__":
 	options=parse_options()
 	main(options)
+	
