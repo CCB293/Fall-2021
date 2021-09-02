@@ -1,0 +1,2 @@
+data/1000G/ALL.chr.phase3_shapeit2_mvncall_integrated_v5a.20130502.genotypes.subset.vcf filter=lfs diff=lfs merge=lfs -text
+*.vcf filter=lfs diff=lfs merge=lfs -text
